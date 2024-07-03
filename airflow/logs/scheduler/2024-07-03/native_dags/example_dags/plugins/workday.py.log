@@ -1,0 +1,4 @@
+[2024-07-03T16:52:49.675+0000] {processor.py:161} INFO - Started process (PID=88) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2024-07-03T16:52:49.676+0000] {processor.py:830} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py for tasks to queue
+[2024-07-03T16:52:49.678+0000] {logging_mixin.py:188} INFO - [2024-07-03T16:52:49.678+0000] {dagbag.py:545} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/plugins/workday.py
+[2024-07-03T16:52:50.432+0000] {logging_mixin.py:188} INFO - [2024-07-03T16:52:50.431+0000] {process_utils.py:263} INFO - Waiting up to 5 seconds for processes to exit...
