@@ -22,7 +22,7 @@ def index():
         df_filtered = df[(df_filtered['Entities'] == selected_entity) & (df_filtered['Book_Number'] == selected_book)]
 
 
-    df_aggregated = df.drop(['Sentiment', 'Subjectivity'], axis=1).groupby(['Book_Number', 'Page_Number', 'Entities']).agg({'Polarity': 'sum'}).reset_index()
+    df_aggregated = df_filtered.drop(['Sentiment', 'Subjectivity'], axis=1).groupby(['Book_Number', 'Page_Number', 'Entities']).agg({'Polarity': 'sum'}).reset_index()
 
     fig = px.line(df_aggregated,
                      x='Page_Number',
