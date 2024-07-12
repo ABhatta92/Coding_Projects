@@ -1,12 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Plots</title>
+    <!-- Load Plotly.js library -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        select {
+            padding: 5px;
+        }
+        .plot-container {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Interactive Plots</h1>
-    <div>{{ plot_hist|safe }}</div>
-    <div>{{ plot_scatter|safe }}</div>
+    <h1>Interactive Sentiment Analysis Plots</h1>
+
+    <!-- Dropdown form for filtering -->
+    <form method="post" action="/">
+        <label for="book_number">Filter by Book Number:</label>
+        <select id="book_number" name="book_number">
+            {% for book in books %}
+                <option value="{{ book }}" {% if book == selected_book %}selected{% endif %}>{{ book }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="entity">Filter by Entity:</label>
+        <select id="entity" name="entity">
+            {% for entity in entities %}
+                <option value="{{ entity }}" {% if entity == selected_entity %}selected{% endif %}>{{ entity }}</option>
+            {% endfor %}
+        </select>
+        
+        <input type="submit" value="Filter">
+    </form>
+
+    <!-- Container for Plotly plot -->
+    <div class="plot-container">
+        {{ plot_html | safe }}
+    </div>
 </body>
 </html>
