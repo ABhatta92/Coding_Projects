@@ -1,10 +1,10 @@
 from flask import Flask
 
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return "Hello, Flask!"
-
-if __name__ == '__main__':
-    app.run(debug=True)
+def create_app():
+    app = Flask(__name__)
+    
+    # Register the routes blueprint
+    from .app.routes import bp as routes_bp
+    app.register_blueprint(routes_bp)
+    
+    return app
