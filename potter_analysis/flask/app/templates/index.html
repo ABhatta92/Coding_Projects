@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Plots</title>
-    <!-- Load Plotly.js library -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <style>
         body {
@@ -32,7 +31,6 @@
 <body>
     <h1>Interactive Sentiment Analysis Plots</h1>
 
-    <!-- Dropdown form for filtering -->
     <form method="post" action="/">
         <label for="book_number">Filter by Book Number:</label>
         <select id="book_number" name="book_number">
@@ -51,7 +49,6 @@
         <input type="submit" value="Filter">
     </form>
 
-    <!-- Container for Plotly plot -->
     <div class="plot-container">
         {{ plot_html | safe }}
     </div>
