@@ -6,7 +6,7 @@ import plotly.io as pio
 
 bp = Blueprint('routes', __name__)
 
-path_to_data = os.path.join(os.path.dirname(os.getcwd()),'data\\final_data_without_text.csv')
+path_to_data = os.path.join(os.path.dirname(os.getcwd()),'data/final_data_without_text.csv')
 df = pd.read_csv(path_to_data, index_col=0)
 
 @bp.route('/', methods=['GET', 'POST'])
